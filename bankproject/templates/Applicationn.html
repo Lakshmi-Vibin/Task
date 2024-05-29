@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dependent Dropdown example</title>
+  <script>
+    function populate(d1,d2)
+     {
+        var d1 = document.getElementById(d1);
+        var d2= document.getElementById(d2);
+        d2.innerHTML = "";
+
+      if(d1.value == "ernakulam")
+       {
+       d2.innerHTML = "";
+       var optionArray=["edapally|Edapally", "aluva|Aaluva"];
+       }
+      else if (d1.value == "kottayam")
+       {
+       d2.innerHTML = "";
+       var optionArray=["ettumanoor|Ettumanoor", "pala|Pala"];
+       }
+
+      for(var option in optionArray)
+        {
+        var pair = optionArray[option].split("|");
+        var newpair = document.createElement("option");
+        newpair.value = pair[0];
+        newpair.innerHTML=pair[1];
+        id2.options.add(newpair);
+        }
+     }
+  </script>
+</head>
+<body>
+<div class="formbold-mb-3">
+       <label class="formbold-form-label">District</label>
+       <select class="formbold-form-input" id="id1" onchange="populate(this.id,'id2')">
+           <option value="">--select--</option>
+           <option value="ernakulam">Ernakulam</option>
+          <option value="kottayam">Kottayam</option>
+          <option value="alapuzha">Alapuzha</option>
+          <option value="idukki">Idukki</option>
+          <option value="trivandrum">Trivandrum</option>
+       </select> <br><hr>
+     <label class="formbold-form-label">Branch</label>
+       <select class="formbold-form-input" id="id2" name="id2">
+               </select>
+</div>
+</body>
+</html>

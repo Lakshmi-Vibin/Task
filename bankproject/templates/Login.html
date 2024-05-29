@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+        h1 {
+         text-align:center-right;
+         font-family:times new roman;
+         color:black;
+         }
+        body{
+
+        background-repeat:no-repeat;
+        background-size:50%;
+        color:black;
+        }
+        #f {
+         text-align:left;
+         margin:auto;
+         color:green;
+         }
+     input[type='text'],[type='password']{
+               border-radius:15px 50px 30px;
+               border:5px;
+               box-shadow:5px 5px;
+               padding:20px;
+               width:200px;
+               height:10px;
+
+
+        }
+        button{
+
+               border:4px;
+               box-shadow:2.5px 2.5px;
+               padding:20px;
+               width:100px;
+               height:10px;
+
+
+        }
+       label {
+        color:brown;
+        padding-right:40px;
+
+       }
+
+    </style>
+</head>
+<body style="background-image:url({% static 'img/img_3.png' %});background-size:70%;background-position:right;">
+<form id="f" method="POST" action="login">
+    {% csrf_token %}
+<h1>Please Login to continue!</h1>
+    <div style="text-align:left;">
+    <label>UserName</label><br><br>
+
+<input type="text" name="uname" required="required"><br><br>
+     <label>Password</label><br>
+<input type="password" name="pswd" required="required"><br><br>
+        <button type="submit" formaction="/new ">Login</button><br><br>
+</div>
+</form>
+<div style="padding=20px;text-align:left;">
+<form>
+    <label><h4>If you are a new user please register then login</h4></label><br>
+    <button type="submit" formaction="/register">Register</button><br>
+</form>
+</div>
+</body>
+</html>
